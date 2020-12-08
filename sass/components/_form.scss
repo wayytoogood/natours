@@ -1,0 +1,108 @@
+.form {
+  &__group {
+    margin-bottom: 1.25rem;
+    &:last-of-type {
+      margin-top: 2.5rem;
+    }
+  }
+
+  &__input {
+    background-color: rgba($clr-white, 0.9);
+    display: block;
+    width: 90%;
+    padding: 0.75rem 1rem;
+    border-radius: 2px;
+    color: inherit;
+    font-family: inherit;
+    font-size: 0.95rem;
+    border: none;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s linear;
+
+    @include respond(tab-land) {
+      width: 80%;
+    }
+
+    @include respond(tab-port) {
+      width: 75%;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $clr-grey-dark-2;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 3px solid $clr-primary;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $clr-secondary-dark;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-left: 1rem;
+    margin-top: 0.35rem;
+    transition: all 0.3s linear;
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-2rem);
+  }
+
+  // For radio buttons
+  &__radio-group {
+    display: inline-block;
+    width: 49%;
+
+    @include respond(tab-port) {
+      width: 100%;
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-label {
+    position: relative;
+    padding-left: 2.35rem;
+    cursor: pointer;
+  }
+
+  &__radio-btn {
+    display: inline-block;
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 0.32rem solid $clr-primary;
+    border-radius: 50%;
+    position: absolute;
+    top: -0.25rem;
+    left: 0;
+
+    &:after {
+      content: '';
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      background-color: $clr-primary;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: all 0.2s linear;
+    }
+  }
+
+  &__radio-input:checked + .form__radio-label .form__radio-btn::after {
+    opacity: 1;
+  }
+}

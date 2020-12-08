@@ -1,0 +1,162 @@
+// INTRODUCTION SECTION
+.introduction {
+  background-color: $clr-grey-light-1;
+  margin-top: -20vh;
+
+  @include respond(tab-port) {
+    &.u-section-padding {
+      padding: 14rem 0;
+    }
+
+    .u-margin-bottom-big {
+      margin-bottom: 2.5rem !important;
+    }
+  }
+  &__center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 6rem;
+    align-items: center;
+
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+      gap: 4rem 0;
+    }
+  }
+}
+
+// FEATURES SECTION
+.features {
+  background: linear-gradient(
+      to right bottom,
+      rgba($clr-primary-light, 0.8),
+      rgba($clr-primary-dark, 0.8)
+    ),
+    url('../../img/nat-4.jpg') center/cover no-repeat;
+  transform: skewY(-7deg);
+  margin-top: -12.05vh;
+
+  @media screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-width: 125em) {
+    background: linear-gradient(
+        to right bottom,
+        rgba($clr-secondary-light, 0.8),
+        rgba($clr-secondary-dark, 0.8)
+      ),
+      url('../../img/nat-4-large.jpg') center/cover no-repeat;
+  }
+
+  & > * {
+    transform: skewY(7deg);
+  }
+
+  &__center {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 3.75rem;
+
+    @include respond(tab-land) {
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+      gap: 3.25rem;
+    }
+
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+      gap: 3rem 0;
+    }
+  }
+}
+
+// TOURS SECTION
+.tours {
+  background-color: $clr-grey-light-1;
+  margin-top: -12.05vh;
+  text-align: center;
+
+  &__center {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3.75rem;
+
+    @include respond(tab-land) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3.25rem;
+
+      .tour:last-child {
+        grid-column: 1 / -1;
+        width: 50%;
+        justify-self: center;
+      }
+    }
+
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+
+      .tour:last-child {
+        grid-column: 1 / 2;
+        width: 100%;
+      }
+    }
+  }
+}
+
+// COMMENTS SECTION
+.comments {
+  position: relative;
+}
+
+// BOOKİNG SECTION
+.booking {
+  background-image: linear-gradient(
+    135deg,
+    $clr-primary-light,
+    $clr-primary-dark
+  );
+}
+
+.book {
+  background: linear-gradient(
+      105deg,
+      rgba($clr-white, 0.9),
+      rgba($clr-white, 0.9) 50%,
+      transparent 50%
+    ),
+    url('../img/nat-10.jpg') center/cover no-repeat;
+
+  @include respond(tab-land) {
+    background: linear-gradient(
+        105deg,
+        rgba($clr-white, 0.9),
+        rgba($clr-white, 0.9) 65%,
+        transparent 65%
+      ),
+      url('../img/nat-10.jpg') center/cover no-repeat;
+  }
+
+  @include respond(tab-port) {
+    background: linear-gradient(
+        105deg,
+        rgba($clr-white, 0.9),
+        rgba($clr-white, 0.9) 100%
+      ),
+      url('../img/nat-10.jpg') center/cover no-repeat;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  &__form {
+    width: 50%;
+    padding: 2.5rem;
+
+    @include respond(tab-land) {
+      width: 65%;
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
+  }
+}

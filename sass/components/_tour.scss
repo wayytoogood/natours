@@ -1,0 +1,227 @@
+.tour {
+  position: relative;
+  perspective: 100rem;
+  width: 100%;
+  max-width: 30rem;
+  height: 32.5rem;
+
+  &__side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.75s ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba($clr-black, 0.15);
+    border-radius: 3px;
+
+    &--front {
+      background-color: $clr-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+
+      &--1 {
+        background-image: linear-gradient(
+          135deg,
+          $clr-secondary-light,
+          $clr-secondary-dark
+        );
+      }
+
+      &--2 {
+        background-image: linear-gradient(
+          135deg,
+          $clr-primary-light,
+          $clr-primary-dark
+        );
+      }
+
+      &--3 {
+        background-image: linear-gradient(
+          135deg,
+          $clr-tertiary-light,
+          $clr-tertiary-dark
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  // CART FRONT
+  &__img {
+    height: 15rem;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &--1 {
+      background: linear-gradient(
+          135deg,
+          $clr-secondary-light,
+          $clr-secondary-dark
+        ),
+        url(../img/nat-5.jpg) center/cover no-repeat;
+    }
+
+    &--2 {
+      background: linear-gradient(135deg, $clr-primary-light, $clr-primary-dark),
+        url(../img/nat-6.jpg) center/cover no-repeat;
+    }
+
+    &--3 {
+      background: linear-gradient(
+          135deg,
+          $clr-tertiary-light,
+          $clr-tertiary-dark
+        ),
+        url(../img/nat-7.jpg) center/cover no-repeat;
+    }
+  }
+
+  &__title {
+    width: 75%;
+    text-align: right;
+    color: $clr-white;
+    position: absolute;
+    top: 8rem;
+    right: 1.25rem;
+    text-transform: uppercase;
+    font-size: 1.75rem;
+    font-weight: 300;
+  }
+
+  &__title-span {
+    padding: 0.75rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &--1 {
+      background-image: linear-gradient(
+        135deg,
+        rgba($clr-secondary-light, 0.85),
+        rgba($clr-secondary-dark, 0.85)
+      );
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+        135deg,
+        rgba($clr-primary-light, 0.85),
+        rgba($clr-primary-dark, 0.85)
+      );
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+        135deg,
+        rgba($clr-tertiary-light, 0.85),
+        rgba($clr-tertiary-dark, 0.85)
+      );
+    }
+  }
+
+  &__list {
+    list-style: none;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem;
+
+    li:not(:last-child) {
+      border-bottom: 1px solid $clr-grey-light-2;
+      padding: 0.65rem;
+      font-size: 0.925rem;
+    }
+  }
+
+  // CART BACK
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 75%;
+    color: $clr-white;
+  }
+
+  &__price-box {
+    margin-bottom: 5rem;
+  }
+
+  &__price-only {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+  }
+
+  &__price-value {
+    font-size: 4rem;
+    font-weight: 100;
+  }
+
+  @media only screen and (max-width: 75em), only screen and (hover: none) {
+    height: auto;
+
+    &__side {
+      position: relative;
+      height: auto;
+
+      &--back {
+        transform: rotateY(0);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        margin-top: -5rem;
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0deg);
+    }
+
+    &__list {
+      width: 80%;
+      margin: 0 auto;
+      padding: 1rem 0 6rem;
+
+      li:not(:last-child) {
+        border-bottom: 1px solid $clr-grey-light-2;
+        padding: 0.65rem;
+      }
+    }
+
+    // CART BACK
+    &__cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      text-align: center;
+      width: 100%;
+      padding: 3.5rem 1rem 3rem;
+    }
+
+    &__price-box {
+      margin-bottom: 1.5rem;
+    }
+
+    &__price-only {
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    &__price-value {
+      font-size: 2.75rem;
+      font-weight: 100;
+    }
+  }
+}
