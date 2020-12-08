@@ -9,6 +9,7 @@
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s;
+  overflow: scroll;
 
   @supports (backdrop-filter: blur(10px)) or
     (-webkit-backdrop-filter: blur(10px)) {
@@ -36,6 +37,10 @@
 
     @media screen and (max-width: 56.25em) {
       width: 85%;
+    }
+
+    @media screen and (max-width: 36em) {
+      width: 90%;
     }
   }
 
@@ -90,6 +95,10 @@
       display: block;
       width: 100%;
       text-align: center;
+    }
+
+    @media screen and (max-width: 56.25em) {
+      padding: 1.75rem 2rem;
     }
   }
 

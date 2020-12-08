@@ -26,6 +26,19 @@ body {
       font-size: 3.5rem;
       letter-spacing: 1.5rem;
     }
+
+    @media only screen and (max-width: 32.5em) {
+      font-size: 3rem;
+    }
+
+    @media only screen and (max-width: 29.375em) {
+      font-size: 2.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    @media only screen and (max-width: 25.9375em) {
+      font-size: 2rem;
+    }
   }
 
   &--secondary {
@@ -34,6 +47,7 @@ body {
     letter-spacing: 0.85rem;
     margin-bottom: 3.25rem;
     animation: moveFromRight 1s ease-out;
+    width: max-content;
 
     @include respond(lg-screen) {
       letter-spacing: 1.1rem;
@@ -44,6 +58,15 @@ body {
       font-size: 1.15rem;
       letter-spacing: 0.75rem;
       margin-bottom: 2rem;
+    }
+
+    @media only screen and (max-width: 29.375em) {
+      width: auto;
+      line-height: 2;
+    }
+
+    @media only screen and (max-width: 25.9375em) {
+      font-size: 1.1rem;
     }
   }
 }
@@ -71,6 +94,10 @@ body {
     font-size: 1.85rem;
     width: 90%;
     margin: auto;
+  }
+
+  @media only screen and (max-width: 25.9375em) {
+    font-size: 1.65rem;
   }
 }
 
